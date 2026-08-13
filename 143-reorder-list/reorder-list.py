@@ -8,12 +8,12 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        slow , fast = head, head
+        slow, fast = head,head
 
         while fast and fast.next:
-            slow = slow.next 
+            slow = slow.next
             fast = fast.next.next
-        
+
         prev = None
         curr = slow.next
         slow.next = None
@@ -22,9 +22,9 @@ class Solution:
             nxt = curr.next
             curr.next = prev
             prev = curr
-            curr = nxt
-
-        first , second = head, prev
+            curr= nxt
+        
+        first, second = head, prev
         while second:
             tmp1, tmp2 = first.next, second.next
             first.next = second
@@ -32,4 +32,3 @@ class Solution:
 
             first = tmp1
             second = tmp2
-        
